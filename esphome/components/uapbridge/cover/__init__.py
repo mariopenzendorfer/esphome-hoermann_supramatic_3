@@ -10,14 +10,11 @@ DEPENDENCIES = ["uapbridge"]
 
 UAPBridgeCover = uapbridge_ns.class_("UAPBridgeCover", cover.Cover, cg.Component)
 
-CONFIG_SCHEMA = (
-   cover.COVER_SCHEMA.extend(
-        {
-            cv.GenerateID(): cv.declare_id(UAPBridgeCover),
-            cv.GenerateID(CONF_UAPBRIDGE_ID): cv.use_id(UAPBridge),
-        }
-    )
-    .extend(cv.COMPONENT_SCHEMA)
+CONFIG_SCHEMA = cv.All(
+  cover.cover_schema(UAPBridgeCover).extend({
+    cv.GenerateID(): cv.declare_id(UAPBridgeCover),
+    cv.GenerateID(CONF_UAPBRIDGE_ID): cv.use_id(UAPBridge),
+  }),
 )
 
 async def to_code(config):
