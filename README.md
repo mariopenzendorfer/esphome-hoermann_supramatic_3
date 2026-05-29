@@ -73,12 +73,21 @@ This repository includes:
 <p align="center">  
     <img src="docs/PCB.png" width="400px" alt="ESP32 with RS485">  
     <img src="docs/installation.png" width="230px" alt="Installation Example">  
+    <img width="630px" alt="Schemaitc" src="https://github.com/user-attachments/assets/959d2ca1-a9f3-4ee9-aa6d-a029513cead6" />
 </p>  
 
 - Build a PCB with an RS485 transceiver.  
 - Adjust ESPHome configuration using provided examples.  
 - Install ESPHome firmware using the [ESPHome Web tool](https://web.esphome.io/).  
 - Perform OTA updates via your ESPHome instance.  
+
+RJ12 pinout:
+1. Not clear
+2. 24VDC
+3. GND
+4. Not clear
+5. B, RS485, DATA-
+6. A, RS485, DATA+
 
 ---
 
@@ -160,7 +169,8 @@ This legacy code is no longer maintained but can be found [here](https://github.
 - **Hardware:**  
   - ESP32 DevKit v4  
   - DC/DC 24V -> 5V Step-Down Converter  
-  - RS485 Transceiver (e.g., SN65HVD72 or HW519)  
+  - RS485 Transceiver (e.g., SN65HVD72, HW519, 5 V MAX485 Module TTL)
+  - RJ12 Male to 6-Pin Screw Terminal Block Adapter (optional)
 
 ---
 
